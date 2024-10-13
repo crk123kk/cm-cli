@@ -4,6 +4,14 @@
 
         支持 vite 搭建的 vue-js 、 vue-ts 模版项目
 
+# 新增功能
+
+    新增打印字体颜色
+
+    新增文件已存在判断是否删除 rimraf
+
+    新增条件判断
+
 # commonjs
 
     使用 commonjs 模式

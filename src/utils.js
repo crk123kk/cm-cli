@@ -1,5 +1,6 @@
 
 const fs = require('fs')
+const chalk = require('chalk');
 
 
 // 校验是否有同名文件夹
@@ -15,7 +16,7 @@ const ora = require('ora')
 const downloadTemp = (branch, name) => {
     return new Promise((resolve, reject) => {
         // 下载的过程中，显示一个 loading 效果
-        const spinner = ora('正在下载模版...')
+        const spinner = ora(`${chalk.cyan('正在下载模版...')}`)
         // 开始 loading
         spinner.start()
         // 去对应的仓库下载模版
@@ -25,8 +26,7 @@ const downloadTemp = (branch, name) => {
                 reject(err)
             }
             resolve()
-            spinner.succeed('模版下载成功')
-
+            spinner.succeed(`${chalk.cyan('模版下载成功...')}`)
         })
     })
 }

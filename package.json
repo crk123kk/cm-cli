@@ -10,10 +10,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chalk": "^4.1.0",
     "commander": "^12.1.0",
     "download-git-repo": "^3.0.2",
     "inquirer": "^12.0.0",
     "log-symbols": "^7.0.0",
     "ora": "^5.4.0"
+  },
+  "dependencies": {
+    "rimraf": "^6.0.1"
   }
 }
