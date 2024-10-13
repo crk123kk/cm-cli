@@ -3,15 +3,10 @@
 console.log('crk cli 启动成功！');
 
 // 拿到用户输入的参数 并设置版本号
-import { program } from 'commander';
-import fs from 'fs'
+const { program } = require('commander');
+const fs = require('fs')
 
-import { fileURLToPath } from "url"
-import path from 'path';
-
-// 获取当前模块的目录路径
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const path = require('path')
 
 const json = fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf-8')
 const pkg = JSON.parse(json)
@@ -20,8 +15,9 @@ const pkg = JSON.parse(json)
 program.version(pkg.version, '-v, --version')
 
 
-import inquirer from 'inquirer'
-import { checkPath, downloadTemp } from './utils.js';
+const inquirer = require('inquirer').default
+
+const { checkPath, downloadTemp } = require('./utils.js')
 // 配置命令
 program.command('create <projectName>')
     // 别名

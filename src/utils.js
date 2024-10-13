@@ -1,15 +1,18 @@
-import fs from 'fs'
+
+const fs = require('fs')
+
 
 // 校验是否有同名文件夹
-export const checkPath = (path) => {
+const checkPath = (path) => {
     return fs.existsSync(path)
 }
 
-import download from 'download-git-repo'
-import ora from 'ora'
+const download = require('download-git-repo')
+const ora = require('ora')
+
 
 // 根据传入的参数 下载对应的模版
-export const downloadTemp = (branch, name) => {
+const downloadTemp = (branch, name) => {
     return new Promise((resolve, reject) => {
         // 下载的过程中，显示一个 loading 效果
         const spinner = ora('正在下载模版...')
@@ -26,4 +29,9 @@ export const downloadTemp = (branch, name) => {
 
         })
     })
+}
+
+module.exports = {
+    checkPath,
+    downloadTemp
 }
