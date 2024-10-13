@@ -63,7 +63,7 @@ program.command('create <projectName>')
                         const spinner = ora(`${chalk.red('正在删除...')}`)
 
                         spinner.start()
-
+                        // 注意这里是 cwd，是命令执行的路径，不是执行文件的位置
                         rimraf(path.join(cwd, res.name))
 
                         spinner.succeed(`${chalk.red('项目已删除...')}`)
